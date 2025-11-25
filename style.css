@@ -89,39 +89,35 @@ section:nth-child(even) {
   box-shadow: 8px 8px 0 var(--pink-secondary);
 }
 
-/* Hero Section */
 .hero-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  min-height: 80vh;
-  background: url('Pics/cartoon-cloud-bg.png') no-repeat center/cover;
-  padding: 100px 20px;
-  margin: 0;
-  border-radius: 0;
-  box-shadow: none;
-  transform: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* centers horizontally */
+    justify-content: center;  /* centers vertically */
+    text-align: center;
+
+    min-height: 90vh;
+
+    /* Remove tilt / rotation completely */
+    transform: none !important;
+
+    /* Center the hero content area */
+    padding: 100px 20px;
+    margin: 0 auto;
+
+    background: url('Pics/cartoon-cloud-bg.png') no-repeat center/cover;
 }
 
+/* Center inner content by limiting max width */
 .hero-content {
-  max-width: 800px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.hero-aisha-illustration {
-    width: 350px;               /* Adjust size as you like */
-    height: 350px;              /* Make width = height for perfect circle */
-    object-fit: cover;          /* Ensures the image fills the circle nicely */
-    border-radius: 50%;         /* Makes it a perfect circle */
-    
-    border: 6px solid var(--outline-color); /* Bold cartoon outline */
-    box-shadow: 10px 10px 0 var(--pink-secondary),
-                15px 15px 0 var(--purple-secondary); /* Layered cartoon shadow */
-    
-    animation: float 3s ease-in-out infinite alternate;
-    background-color: white;   /* Creates clean contrast inside the border */
+/* Fix spacing between hero content and the image */
+.hero-section img {
+    margin-top: 40px;
 }
-
 
 @keyframes float {
   0% { transform: translateY(0) rotate(0); }
