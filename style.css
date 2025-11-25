@@ -1,0 +1,291 @@
+/* Basic Reset & Global Styles */
+:root {
+  --pink-primary: #FFC0CB;
+  --pink-secondary: #FFB6C1;
+  --purple-primary: #E6E6FA;
+  --purple-secondary: #D8BFD8;
+  --cream-bg: #FFFDD0;
+  --teal-accent: #B0E0E6;
+  --golden-yellow: #FFD700;
+  --outline-color: #333;
+  --text-color: #555;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, var(--cream-bg) 0%, var(--purple-primary) 100%);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Luckiest Guy', cursive;
+  color: var(--outline-color);
+  text-shadow: 3px 3px 0px var(--pink-secondary), 5px 5px 0px var(--purple-secondary);
+  text-align: center;
+  margin-bottom: 1.3em;
+  letter-spacing: 2px;
+}
+
+h1 { font-size: 4em; }
+h2 { font-size: 3em; }
+
+/* General Sections */
+section {
+  padding: 80px 20px;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 20px;
+  border: 4px solid var(--outline-color);
+  box-shadow: 10px 10px 0 var(--pink-secondary),
+              15px 15px 0 var(--purple-secondary);
+  max-width: 1000px;
+  margin: 60px auto;
+  transform: rotate(-2deg);
+  position: relative;
+}
+
+section:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+/* Header & Navigation */
+.main-header {
+  background-color: var(--pink-primary);
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 4px solid var(--outline-color);
+  box-shadow: 0 5px 0 var(--purple-secondary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-item {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.8em;
+  color: var(--outline-color);
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: var(--teal-accent);
+  border: 3px solid var(--outline-color);
+  border-radius: 30px;
+  box-shadow: 5px 5px 0 var(--golden-yellow);
+  transition: .2s ease-in-out;
+}
+
+.nav-item:hover {
+  background-color: var(--golden-yellow);
+  color: white;
+  transform: translateY(-5px) rotate(-3deg);
+  box-shadow: 8px 8px 0 var(--pink-secondary);
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+  background: url('Pics/cartoon-cloud-bg.png') no-repeat center/cover;
+  padding: 100px 20px;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none !important;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-aisha-illustration {
+    width: 350px;               /* Adjust size as you like */
+    height: 350px;              /* Make width = height for perfect circle */
+    object-fit: cover;          /* Ensures the image fills the circle nicely */
+    border-radius: 50%;         /* Makes it a perfect circle */
+    
+    border: 6px solid var(--outline-color); /* Bold cartoon outline */
+    box-shadow: 10px 10px 0 var(--pink-secondary),
+                15px 15px 0 var(--purple-secondary); /* Layered cartoon shadow */
+    
+    animation: float 3s ease-in-out infinite alternate;
+    background-color: white;   /* Creates clean contrast inside the border */
+}
+
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0); }
+}
+
+/* Buttons */
+.cta-button, .submit-button {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 2em;
+  padding: 15px 30px;
+  background-color: var(--pink-secondary);
+  color: white;
+  border-radius: 40px;
+  border: 4px solid var(--outline-color);
+  box-shadow: 8px 8px 0 var(--purple-secondary);
+  transition: .2s ease-in-out;
+}
+
+.cta-button:hover,
+.submit-button:hover {
+  background-color: var(--purple-secondary);
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 12px 12px 0 var(--pink-primary);
+}
+
+/* About */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-illustration {
+  width: 250px;
+  border: 5px solid var(--outline-color);
+  border-radius: 50%;
+  box-shadow: 8px 8px 0 var(--teal-accent);
+  filter: drop-shadow(5px 5px 3px rgba(0,0,0,0.2));
+}
+
+/* Gallery */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 30px;
+}
+
+.photo-item {
+  background-color: var(--cream-bg);
+  border: 4px solid var(--outline-color);
+  border-radius: 15px;
+  padding: 15px;
+  transition: .2s ease-in-out;
+  box-shadow: 7px 7px 0 var(--purple-primary);
+}
+
+.photo-item:hover {
+  transform: translateY(-10px) rotate(-5deg) scale(1.03);
+  box-shadow: 10px 10px 0 var(--pink-secondary);
+}
+
+.photo-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 3px solid var(--outline-color);
+  border-radius: 10px;
+}
+
+.caption {
+  font-weight: 700;
+  background-color: var(--teal-accent);
+  padding: 5px 10px;
+  border: 2px solid var(--outline-color);
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* Malaysia */
+.malaysia-map {
+  max-width: 600px;
+  width: 100%;
+  border: 5px solid var(--outline-color);
+  border-radius: 20px;
+  box-shadow: 10px 10px 0 var(--golden-yellow);
+}
+
+/* Message Form */
+.message-form {
+  background-color: var(--pink-primary);
+  padding: 30px;
+  border: 4px solid var(--outline-color);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 var(--purple-secondary);
+  max-width: 500px;
+  margin: auto;
+}
+
+.message-form input,
+.message-form textarea {
+  background-color: var(--cream-bg);
+  border: 3px solid var(--outline-color);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.notes-display {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.message-bubble {
+  background-color: var(--teal-accent);
+  border: 3px solid var(--outline-color);
+  border-radius: 20px;
+  padding: 15px 25px;
+  max-width: 300px;
+  box-shadow: 5px 5px 0 var(--golden-yellow);
+  transform: rotate(calc(var(--rotation) * 1deg));
+  position: relative;
+}
+
+.message-bubble::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 20px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid var(--outline-color);
+}
+
+.message-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 21px;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 13px solid var(--teal-accent);
+}
+
+/* Footer */
+.main-footer {
+  background-color: var(--outline-color);
+  color: var(--cream-bg);
+  padding: 30px;
+  text-align: center;
+  border-top: 4px solid var(--pink-secondary);
+  box-shadow: 0 -5px 0 var(--purple-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 2.8em; }
+  h2 { font-size: 2.3em; }
+  .nav-item { font-size: 1.4em; }
+  section, section:nth-child(even) { transform: none; }
+  .hero-aisha-illustration { width: 280px; }
+  .photo-grid { grid-template-columns: 1fr; }
+}
